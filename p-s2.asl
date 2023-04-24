@@ -71,7 +71,7 @@ reset {
   }
 }
 isLoading {
-  if(vars.FrameID.Current == 0 && version == "Part B" || vars.FrameID.Current == 0 && version == "Part A") {
+  if(game.MainWindowHandle == IntPtr.Zero) {
     return false;
   }
 }
