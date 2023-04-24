@@ -71,7 +71,10 @@ reset {
   }
 }
 isLoading {
-  if(game.MainWindowHandle !=!= IntPtr.Zero) {
+  if(game.MainWindowHandle == IntPtr.Zero) {
+    return true;
+  }
+   else {
     return false;
   }
 }
