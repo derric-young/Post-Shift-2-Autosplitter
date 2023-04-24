@@ -29,7 +29,6 @@ init
         version = "Part B";
         vars.version = 'B';
     }
-    timer.IsGameTimePaused = false;
 }
 // This Pauses the Timer when None of the Parts are Open. the Timer is Unpaused With the Last Line of the Init Code.
 exit
@@ -71,6 +70,14 @@ reset {
     return true;
   }
 }
+isLoading {
+  if(vars.FrameID.Current == 0 && version == "Part B") {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 // Splits. This Contains All the Splitting Funtonality of the Game. From Part A to B
 split {
   if(vars.FrameID.Current == 2 && vars.FrameID.Old == 1 && version == "Part B" || 
@@ -83,6 +90,8 @@ split {
 	vars.FrameID.Current == 1 && vars.FrameID.Old == 7 && version == "Part B" || 
 	vars.FrameID.Current == 18 && vars.FrameID.Old == 7 && version == "Part B" || 
 	vars.FrameID.Current == 3 && vars.FrameID.Old == 2 && version == "Part A" || 
+	vars.FrameID.Current == 11 && vars.FrameID.Old == 7 && version == "Part A" ||
+	vars.FrameID.Current == 12 && vars.FrameID.Old == 11 && version == "Part A" ||
 	vars.FrameID.Current == 6 && vars.FrameID.Old == 5 && version == "Part A" || 
 	vars.FrameID.Current == 7 && vars.FrameID.Old == 6 && version == "Part A" || 
 	vars.FrameID.Current == 2 && vars.FrameID.Old == 7 && version == "Part A" || 
