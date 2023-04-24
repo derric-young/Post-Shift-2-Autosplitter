@@ -72,9 +72,6 @@ reset {
 }
 isLoading {
   if(vars.FrameID.Current == 0 && version == "Part B") {
-    return true;
-  }
-  else {
     return false;
   }
 }
