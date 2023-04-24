@@ -74,10 +74,9 @@ isLoading {
   if(game.MainWindowHandle == IntPtr.Zero) {
     return true;
   }
-   else {
+  else {
     return false;
   }
-}
 // Splits. This Contains All the Splitting Funtonality of the Game. From Part A to B
 split {
   if(vars.FrameID.Current == 2 && vars.FrameID.Old == 1 && version == "Part B" || 
